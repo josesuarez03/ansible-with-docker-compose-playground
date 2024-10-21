@@ -2,10 +2,16 @@
 
 ## Actions in the Host machine:
 
+Fork clone
+
+![fork clone](images/image.png)
+
 Launch containers
 ```bash
 docker-compose up -d
 ```
+
+![Ejecucion del contenedor](images/image2.png)
 
 Jump to the control node from host machine
 ```bash
@@ -47,12 +53,17 @@ ansible_ssh_pass=password
 ansible_python_interpreter=/usr/bin/python3
 ```
 
+![host file](images/image3.png)
+
 Test conectivity
 ```bash
 ansible-inventory --list -y
 ansible all -m ping -u root
 ansible all -a "df -h" -u root
 ```
+![alt text](images/image4.png)
+![alt text](images/image5.png)
+![alt text](images/image6.png)
 
 Connect with nodes (ssh password is "password" without quotes):
 ```bash
@@ -66,6 +77,8 @@ Shared folder between host machine and control node:
 ```bash
 cd /shared
 ```
+
+![alt text](images/image7.png)
 
 And do the magic here!
 
